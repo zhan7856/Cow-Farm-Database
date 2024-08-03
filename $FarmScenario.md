@@ -4,4 +4,6 @@
 
 ### Mighty Milkers would like to be able to track every drop of milk from the cow to the processing plant, including which cow it was collected from, when it was collected. They would also like to be able to monitor the inputs (food) and expenses (farm hand working hours). Mighty Milkers wants to ensure that this database will continue to work moving forward, so they need the design to allow for changes (such as adding new ones or closing existing ones) to the cows, farms, and farm hands without losing any of the data that was collected. 
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Important questions and their answers may be added below the narrative. It is expected that everyone should have questions that they seek answers for - the prompt is written from the perspective of the customer, who does not know what information you are looking for. Therefore, you must ask questions to get that information from the customer (it is not a confrontational questions, you are just learning what their real-world model actually looks like and what they want to capture about it). Be sure to phrase your questions in a way that the customer can understand what you are looking for.
