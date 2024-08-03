@@ -92,9 +92,9 @@ CREATE TABLE transportCompany (
   CONSTRAINT PK_TransportCompany PRIMARY KEY (transportCompany_id)
 );
 
-CONSTRAINTS, FORIEGN KEYS, and DATA: I'm adding them one table @ a time 
+-- CONSTRAINTS, FORIEGN KEYS, and DATA: I'm adding them one table @ a time 
 
-milkingMachine
+-- milkingMachine
 
 ALTER TABLE milkingMachine 
 ADD CONSTRAINT FK_milkingMachine_Farm FOREIGN KEY (farm) REFERENCES farm(farm_id);
@@ -104,7 +104,7 @@ VALUES
     (1, 1),
     (2, 2);
 
-milk
+-- milk
 
 ALTER TABLE milk 
 ADD CONSTRAINT FK_milk_milkingMachine FOREIGN KEY (milk_machine) REFERENCES milkingMachine(milking_machine_id),
@@ -112,16 +112,16 @@ ADD CONSTRAINT FK_milk_cow FOREIGN KEY (cow) REFERENCES cow(ear_tag)
 ADD CONSTRAINT positive_ozs CHECK (ozs > 0)
 ADD CONSTRAINT milk_times CHECK (start_time < end_time);
 
-the amount of milk is always positive
+-- the amount of milk is always positive
 
-start time has to be before end time
+-- start time has to be before end time
 
 INSERT INTO milk (milk_id, milk_machine, cow, collected_date, start_time, end_time, ozs)
 VALUES
     (1, 1, 1, '2024-03-02', '08:00:00', '90:00:00', 32),
     (2, 2, 2, '2024-03-02', '09:00:00', '10:00:00', 28);
 
-cow
+-- cow
 
 ALTER TABLE cow 
 ADD CONSTRAINT FK_cow_farm FOREIGN KEY (farm) REFERENCES farm(farm_id);
@@ -131,28 +131,27 @@ VALUES
     (1, 'Rohan', 1),
     (2, 'MooMoo', 1);
 
-farm
-
+-- farm
 
 INSERT INTO farm (farm_id, address, city, state, zip)
 VALUES
     (1, '123 Random St', 'ACity', 'MN', '12345'),
     (2, '456 WTF St', 'AnotherCity', 'MN', '67890');
 
-feed
+-- feed
 
 ALTER TABLE feed 
 ADD CONSTRAINT FK_feed_farm FOREIGN KEY (farm_id) REFERENCES farm(farm_id)
 ADD CONSTRAINT positive_lbs CHECK (lbs > 0);
 
-the amount of feed is always positive
+-- the amount of feed is always positive
 
 INSERT INTO feed (farm_id, lbs, kind)
 VALUES
     (1, 100, 'Hay'),
     (1, 50, 'Grain');
 
-transport
+-- transport
 
 ALTER TABLE transport 
 ADD CONSTRAINT FK_transport_transportCompany FOREIGN KEY (transport_company_id) REFERENCES transportCompany(transportCompany_id),
@@ -164,7 +163,7 @@ VALUES
     (1, 1, 1, 'ABC123', 1, '2024-03-02', '08:00:00'),
     (2, 2, 2, 'DEF456', 2, '2024-03-02', '09:00:00');
 
-maintenance
+-- maintenance
 
 ALTER TABLE maintenance 
 ADD CONSTRAINT FK_maintenance_milkingMachine FOREIGN KEY (milking_machine_affected) REFERENCES milkingMachine(milking_machine_id),
@@ -175,56 +174,54 @@ VALUES
     (1, 1, 1, '2024-03-01', TRUE),
     (2, 2, 2, '2024-03-02', FALSE);
 
-tankInput
+-- tankInput
 
 ALTER TABLE tankInput 
 ADD CONSTRAINT FK_tankInput_milk FOREIGN KEY (milkAdded) REFERENCES milk(milk_id),
 ADD CONSTRAINT positive_milkAdded CHECK (milkAdded > 0);
 
-the amount of milkAdded is always positive
+-- the amount of milkAdded is always positive
 
 INSERT INTO tankInput (tank, milkAdded, tankInput_date, tankInput_time)
 VALUES
     (1, 1, '2024-03-01', '08:00:00'),
     (2, 1, '2024-03-01', '09:00:00');
 
-processingCompany
+-- processingCompany
 
 INSERT INTO processingCompany (processingCompany_id, name)
 VALUES
     (1, 'Company A'),
     (2, 'Company B');
 
-tank
+-- tank
 
 ALTER TABLE tank 
 ADD CONSTRAINT FK_tank_farm FOREIGN KEY (farm) REFERENCES farm(farm_id),
 ADD CONSTRAINT tank_dates CHECK (purchase < retired);
 
-purchase date has to be before the retire date
+-- purchase date has to be before the retire date
 
 INSERT INTO tank (tank_id, farm, purchase, retired)
 VALUES
     (1, 1, '2023-01-01', NULL),
     (2, 2, '2022-05-15', '2024-02-28');
 
-hand
+-- hand
 
 ALTER TABLE hand 
 ADD CONSTRAINT FK_hand_farm FOREIGN KEY (farm) REFERENCES farm(farm_id);
 
-would make fname and lname unique but each column already distinct from primary key
+-- would make fname and lname unique but each column already distinct from primary key
 
 INSERT INTO hand (hand_id, fname, lname, farm)
 VALUES
     (1, 'Rohan', 'Kumar', 1),
     (2, 'Another', 'Name', 2);
 
-
-transportCompany
+-- transportCompany
 
 INSERT INTO transportCompany (transportCompany_id, name)
 VALUES
     (1, 'Transport Company A'),
     (2, 'Transport Company B');
-
