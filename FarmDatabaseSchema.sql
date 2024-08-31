@@ -108,8 +108,8 @@ VALUES
 
 ALTER TABLE milk 
 ADD CONSTRAINT FK_milk_milkingMachine FOREIGN KEY (milk_machine) REFERENCES milkingMachine(milking_machine_id),
-ADD CONSTRAINT FK_milk_cow FOREIGN KEY (cow) REFERENCES cow(ear_tag)
-ADD CONSTRAINT positive_ozs CHECK (ozs > 0)
+ADD CONSTRAINT FK_milk_cow FOREIGN KEY (cow) REFERENCES cow(ear_tag),
+ADD CONSTRAINT positive_ozs CHECK (ozs > 0),
 ADD CONSTRAINT milk_times CHECK (start_time < end_time);
 
 -- the amount of milk is always positive
