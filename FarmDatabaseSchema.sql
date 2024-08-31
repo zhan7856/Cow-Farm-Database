@@ -66,7 +66,7 @@ CREATE TABLE tankInput(
 
 CREATE TABLE processingCompany (
   processingCompany_id INTEGER,
-  name VARCHAR(255)
+  name VARCHAR(255),
   CONSTRAINT PK_ProcessingCompany PRIMARY KEY (processingCompany_id)
 );
 
@@ -141,7 +141,7 @@ VALUES
 -- feed
 
 ALTER TABLE feed 
-ADD CONSTRAINT FK_feed_farm FOREIGN KEY (farm_id) REFERENCES farm(farm_id)
+ADD CONSTRAINT FK_feed_farm FOREIGN KEY (farm_id) REFERENCES farm(farm_id),
 ADD CONSTRAINT positive_lbs CHECK (lbs > 0);
 
 -- the amount of feed is always positive
