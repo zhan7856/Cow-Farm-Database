@@ -88,7 +88,7 @@ CREATE TABLE hand (
 
 CREATE TABLE transportCompany (
   transportCompany_id INTEGER,
-  name VARCHAR(255)
+  name VARCHAR(255),
   CONSTRAINT PK_TransportCompany PRIMARY KEY (transportCompany_id)
 );
 
