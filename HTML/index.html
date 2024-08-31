@@ -7,8 +7,10 @@
     <title>Cow Farm Database</title>
 </head>
 <body>
-    <h1>Cow Farm Database</h1>
-    <img class="center" src="../Images/SnapchatCow.jpg" width="50%" alt="Cow with Hearts">
+    <h1 style="color: hotpink;  -webkit-text-stroke: 1px black; text-align:center;">Farm Database </h1>
+    <div style="text-align: center;">
+        <img class="center" src="../Images/SnapchatCow.jpg" width="30%" alt="Cow with Hearts">
+    </div>
 
     <main>
         <section>
@@ -22,7 +24,6 @@
 
                 <label for="size">Size (in acres):</label>
                 <input type="number" id="size" name="size" required>
-
                 <button type="submit">Add Farm</button>
             </form>
         </section>
@@ -59,6 +60,172 @@
                 <input type="number" id="toFarmId" name="toFarmId" required>
 
                 <button type="submit">Transfer Cow</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Purchase Feed</h2>
+            <form id="purchaseFeedForm">
+                <label for="farmId">Farm ID:</label>
+                <input type="number" id="farmId" name="farmId" required>
+        
+                <label for="feedType">Feed Type:</label>
+                <input type="text" id="feedType" name="feedType" required>
+        
+                <label for="quantity">Quantity (in tons):</label>
+                <input type="number" id="quantity" name="quantity" required>
+        
+                <label for="purchaseDate">Purchase Date:</label>
+                <input type="date" id="purchaseDate" name="purchaseDate" required>
+        
+                <button type="submit">Record Purchase</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Hire Farm Worker</h2>
+            <form id="hireHandForm">
+                <label for="farmId">Farm ID:</label>
+                <input type="number" id="farmId" name="farmId" required>
+        
+                <label for="workerName">Worker Name:</label>
+                <input type="text" id="workerName" name="workerName" required>
+        
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" required>
+        
+                <label for="position">Position:</label>
+                <input type="text" id="position" name="position" required>
+        
+                <button type="submit">Hire Worker</button>
+            </form>
+        </section>
+
+        
+        <section>
+            <h2>Purchase Milking Machine</h2>
+            <form id="purchaseMachineForm">
+                <label for="farmId">Farm ID:</label>
+                <input type="number" id="farmId" name="farmId" required>
+        
+                <label for="machineId">Machine ID:</label>
+                <input type="text" id="machineId" name="machineId" required>
+        
+                <label for="purchaseDate">Purchase Date:</label>
+                <input type="date" id="purchaseDate" name="purchaseDate" required>
+        
+                <button type="submit">Record Purchase</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Machine Maintenance</h2>
+            <form id="machineMaintenanceForm">
+                <label for="machineId">Machine ID:</label>
+                <input type="text" id="machineId" name="machineId" required>
+        
+                <label for="maintenanceDate">Maintenance Date:</label>
+                <input type="date" id="maintenanceDate" name="maintenanceDate" required>
+        
+                <label for="details">Maintenance Details:</label>
+                <textarea id="details" name="details" required></textarea>
+        
+                <button type="submit">Record Maintenance</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Purchase Milk Tank</h2>
+            <form id="purchaseTankForm">
+                <label for="farmId">Farm ID:</label>
+                <input type="number" id="farmId" name="farmId" required>
+        
+                <label for="tankId">Tank ID:</label>
+                <input type="text" id="tankId" name="tankId" required>
+        
+                <label for="capacity">Capacity (in liters):</label>
+                <input type="number" id="capacity" name="capacity" required>
+        
+                <label for="purchaseDate">Purchase Date:</label>
+                <input type="date" id="purchaseDate" name="purchaseDate" required>
+        
+                <button type="submit">Record Purchase</button>
+            </form>
+        </section>
+
+        
+        <section>
+            <h2>Milking Event</h2>
+            <form id="milkingEventForm">
+                <label for="cowId">Cow ID:</label>
+                <input type="text" id="cowId" name="cowId" required>
+        
+                <label for="machineId">Machine ID:</label>
+                <input type="text" id="machineId" name="machineId" required>
+        
+                <label for="tankId">Tank ID:</label>
+                <input type="text" id="tankId" name="tankId" required>
+        
+                <label for="milkingDate">Milking Date:</label>
+                <input type="date" id="milkingDate" name="milkingDate" required>
+        
+                <label for="quantity">Quantity (in liters):</label>
+                <input type="number" id="quantity" name="quantity" required>
+        
+                <button type="submit">Record Milking</button>
+            </form>
+        </section>
+
+        
+        <section>
+            <h2>Register New Company</h2>
+            <form id="newCompanyForm">
+                <label for="companyName">Company Name:</label>
+                <input type="text" id="companyName" name="companyName" required>
+        
+                <label for="industry">Industry:</label>
+                <input type="text" id="industry" name="industry" required>
+        
+                <label for="contactInfo">Contact Information:</label>
+                <input type="text" id="contactInfo" name="contactInfo" required>
+        
+                <button type="submit">Register Company</button>
+            </form>
+        </section>
+
+        
+        <section>
+            <h2>Edit Company</h2>
+            <form id="editCompanyForm">
+                <label for="companyId">Company ID:</label>
+                <input type="number" id="companyId" name="companyId" required>
+        
+                <label for="companyName">Company Name:</label>
+                <input type="text" id="companyName" name="companyName">
+        
+                <label for="industry">Industry:</label>
+                <input type="text" id="industry" name="industry">
+        
+                <label for="contactInfo">Contact Information:</label>
+                <input type="text" id="contactInfo" name="contactInfo">
+        
+                <button type="submit">Update Company</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Milk Delivery</h2>
+            <form id="milkDeliveryForm">
+                <label for="tankId">Tank ID:</label>
+                <input type="text" id="tankId" name="tankId" required>
+        
+                <label for="truckId">Truck ID:</label>
+                <input type="text" id="truckId" name="truckId" required>
+        
+                <label for="deliveryDate">Delivery Date:</label>
+                <input type="text"; id="deliveryDate"; name="deliveryDate";>
+                
+                <button type="submit">Add Milk Delivery</button>
             </form>
         </section>
 
