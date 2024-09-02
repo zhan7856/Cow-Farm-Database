@@ -2,6 +2,8 @@ package com.paulina.farm_management.data_model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -16,8 +18,13 @@ import java.time.LocalTime;
 @Setter
 @Builder
 public class tankInput {
+
+    @ManyToOne
+    @JoinColumn(referencedColumnName = "tank_id")
     int tank;
 
+    @ManyToOne
+    @JoinColumn(referencedColumnName = "milk_id")
     int milkAdded;
 
     LocalDate tankInput_date;

@@ -1,8 +1,6 @@
 package com.paulina.farm_management.data_model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -24,5 +22,7 @@ public class hand {
     @Column(length = 255)
     String lname;
 
+    @ManyToOne
+    @JoinColumn(referencedColumnName = "farm_id")
     int farm;
 }
