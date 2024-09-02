@@ -8,16 +8,27 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+
 @Entity
 @AllArgsConstructor
 @Getter
 @Setter
 @Builder
-public class processingCompany {
+public class Farm {
 
     @Id
-    int processingCompany_id;
+    int farm_id;
 
     @Column(length = 255)
-    String name;
+    String address;
+
+    @Column(length = 255)
+    String city;
+
+    @Column(length = 2)
+    String state;
+
+    @Column(length = 5)
+    String zip;
+
 }

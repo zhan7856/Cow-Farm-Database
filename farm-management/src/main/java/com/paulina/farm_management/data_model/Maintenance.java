@@ -9,25 +9,28 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 @Entity
 @AllArgsConstructor
 @Getter
 @Setter
 @Builder
-public class tankInput {
+public class Maintenance {
+
+    @Id
+    int maintenance_id;
 
     @ManyToOne
-    @JoinColumn(referencedColumnName = "tank_id")
-    int tank;
+    @JoinColumn(referencedColumnName = "milking_machine_id")
+    int milking_machine_affected;
 
     @ManyToOne
-    @JoinColumn(referencedColumnName = "milk_id")
-    int milkAdded;
+    @JoinColumn(referencedColumnName = "hand_id")
+    int primary_hand;
 
-    LocalDate tankInput_date;
+    LocalDateTime maintenance_date;
 
-    LocalTime tankInput_time;
+    boolean maintenance_wasSuccess;
+
 }

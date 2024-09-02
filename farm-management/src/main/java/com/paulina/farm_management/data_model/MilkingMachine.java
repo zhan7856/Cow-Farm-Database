@@ -1,5 +1,6 @@
 package com.paulina.farm_management.data_model;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -9,28 +10,17 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
-
 @Entity
 @AllArgsConstructor
 @Getter
 @Setter
 @Builder
-public class maintenance {
+public class MilkingMachine {
 
     @Id
-    int maintenance_id;
+    int milking_machine_id;
 
     @ManyToOne
-    @JoinColumn(referencedColumnName = "milking_machine_id")
-    int milking_machine_affected;
-
-    @ManyToOne
-    @JoinColumn(referencedColumnName = "hand_id")
-    int primary_hand;
-
-    LocalDateTime maintenance_date;
-
-    boolean maintenance_wasSuccess;
-
+    @JoinColumn(referencedColumnName = "farm_id")
+    int farm;
 }

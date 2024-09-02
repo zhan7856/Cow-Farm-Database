@@ -17,7 +17,7 @@ import java.time.LocalTime;
 @Getter
 @Setter
 @Builder
-public class milk {
+public class Milk {
 
     @Id
     int milk_id;

@@ -1,35 +1,28 @@
 package com.paulina.farm_management.data_model;
 
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.time.LocalDate;
 
 @Entity
 @AllArgsConstructor
 @Getter
 @Setter
 @Builder
-public class tank {
+public class Hand {
 
     @Id
-    int tank_id;
+    int hand_id;
+
+    @Column(length = 255)
+    String fname;
+
+    @Column(length = 255)
+    String lname;
 
     @ManyToOne
     @JoinColumn(referencedColumnName = "farm_id")
     int farm;
-
-    LocalDate purchase;
-
-    LocalDate retired;
-
-
-
 }

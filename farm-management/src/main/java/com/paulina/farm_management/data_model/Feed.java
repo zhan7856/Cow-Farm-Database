@@ -14,7 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class feed {
+public class Feed {
 
     @ManyToOne
     @JoinColumn(referencedColumnName = "farm_id")

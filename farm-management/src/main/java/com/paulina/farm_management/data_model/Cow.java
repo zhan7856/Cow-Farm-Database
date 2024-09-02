@@ -12,7 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class cow {
+public class Cow {
     @Id
     int ear_tag;
 

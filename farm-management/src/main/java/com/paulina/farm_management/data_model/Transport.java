@@ -14,7 +14,7 @@ import java.time.LocalTime;
 @Getter
 @Setter
 @Builder
-public class transport {
+public class Transport {
 
     @Id
     int transport_id;
